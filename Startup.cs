@@ -13,7 +13,7 @@ using Microsoft.OpenApi.Models;
 using Configuration.DbSettings;
 using Microsoft.Extensions.Options;
 using Services;
-
+using Profiles;
 namespace kaf
 {
     public class Startup
@@ -33,7 +33,7 @@ namespace kaf
             services.Configure<DbSettings>(Configuration.GetSection("DatabaseSettings"));
             services.AddSingleton<IDbSettings>(x => x.GetRequiredService<IOptions<DbSettings>>().Value);
             services.AddScoped<IBookService, BookService>();
-
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

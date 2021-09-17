@@ -7,9 +7,9 @@ using MongoDB.Driver;
 namespace Services
 {
 
-    interface IBookService 
+    public interface IBookService 
     {
-        void Create();
+        Task<Book> Create();
     }
     class BookService: IBookService
     {
@@ -22,12 +22,15 @@ namespace Services
             _book = db.GetCollection<Book>("Book");
         }
 
-        public async void Create()
+        public async Task<Book> Create()
         { 
             Book b1 = new Book();
             b1.Author = "Sylvain";
             b1.Title = "Le bookin";
+            
             await _book.InsertOneAsync(b1);
+
+            return b1;
         }
     }
 } 

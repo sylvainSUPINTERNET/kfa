@@ -39,3 +39,5 @@ E:\kaf\bin\Debug\net5.0\runtimes\win\native\snappy64.dll
 E:\kaf\bin\Debug\net5.0\runtimes\linux\native\libmongocrypt.so
 E:\kaf\bin\Debug\net5.0\runtimes\osx\native\libmongocrypt.dylib
 E:\kaf\bin\Debug\net5.0\runtimes\win\native\mongocrypt.dll
+E:\kaf\bin\Debug\net5.0\AutoMapper.dll
+E:\kaf\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

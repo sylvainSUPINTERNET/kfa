@@ -10,7 +10,7 @@ namespace Configuration.DbSettings
         string ConnectionString { get; set; }
         string DbName { get; set; }
 
-        Dictionary<string, double> Collections {get; set;}
+        Dictionary<string, string> Collections {get; set;}
 
     }
 
@@ -18,6 +18,6 @@ namespace Configuration.DbSettings
     {
         public string ConnectionString { get; set;}
         public string DbName { get; set;}
-        public Dictionary<string, double> Collections { get; set; }
+        public Dictionary<string, string> Collections { get; set; }
     }
 }

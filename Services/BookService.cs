@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Configuration.DbSettings;
 using Microsoft.Extensions.Logging;
 using Models;
@@ -8,7 +9,7 @@ namespace Services
 
     interface IBookService 
     {
-        Book Create();
+        void Create();
     }
     class BookService: IBookService
     {
@@ -21,9 +22,12 @@ namespace Services
             _book = db.GetCollection<Book>("Book");
         }
 
-        public Book Create()
+        public async void Create()
         { 
-            _book.InsertOneAsync()
+            Book b1 = new Book();
+            b1.Author = "Sylvain";
+            b1.Title = "Le bookin";
+            await _book.InsertOneAsync(b1);
         }
     }
 } 
